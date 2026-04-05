@@ -1,0 +1,3 @@
+cd barbearia-app
+
+cd backend
