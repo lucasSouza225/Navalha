@@ -40,8 +40,9 @@ const register = async (req, res) => {
                 role: user.role
             }
         });
+
     } catch (error) {
-        console.error(error);
+        console.error('Erro no registro:', error);
         res.status(500).json({ error: 'Erro ao cadastrar usuário' });
     }
 };
@@ -75,8 +76,9 @@ const login = async (req, res) => {
                 role: user.role
             }
         });
+
     } catch (error) {
-        console.error(error);
+        console.error('Erro no login:', error);
         res.status(500).json({ error: 'Erro ao fazer login' });
     }
 };
