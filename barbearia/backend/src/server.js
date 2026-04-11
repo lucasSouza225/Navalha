@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { connectDb } from './config/db.js';
+import authRoutes from './domains/auth/authRoutes.js';
 
 // Resolver caminho
 const __filename = fileURLToPath(import.meta.url);
@@ -27,6 +28,9 @@ app.use(cors({
 
 // Conectar ao banco
 connectDb();
+
+// ROTAS
+app.use('/api/auth', authRoutes);
 
 // Rota de teste
 app.get('/api/health', (req, res) => {
